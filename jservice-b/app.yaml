@@ -1,0 +1,60 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jservice-b
+  namespace: polyglot
+  labels:
+    app: jservice-b
+spec:
+  type: NodePort
+  selector:
+    app: jservice-b
+  ports:
+  - port: 8080
+    targetPort: 8080
+    name: http
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: jservice-b-ingress
+  namespace: polyglot
+  annotations:
+    nginx.ingress.kubernetes.io/app-root: /
+spec:
+  rules:
+    - host: jservice-b.vorozco.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jservice-b
+                port:
+                  number: 8080
+---
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: jservice-b
+  namespace: polyglot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jservice-b
+  template:
+    metadata:
+      labels:
+        app: jservice-b
+        version: v1
+    spec:
+      containers:
+      - name: jservice-b
+        image: tuxtor/jservice-b:1.0.0-link
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+---

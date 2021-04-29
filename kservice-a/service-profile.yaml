@@ -1,0 +1,12 @@
+apiVersion: linkerd.io/v1alpha2
+kind: ServiceProfile
+metadata:
+  name: kservice-a.polyglot.svc.cluster.local
+  namespace: polyglot
+spec:
+  routes:
+    - condition:
+        method: GET
+        pathRegex: /.*
+      name: GET ALL
+      isRetryable: true

@@ -1,0 +1,59 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: kservice-a
+  namespace: polyglot
+  labels:
+    app: kservice-a
+spec:
+  type: ClusterIP
+  selector:
+    app: kservice-a
+  ports:
+  - port: 8080
+    targetPort: 8080
+    name: http
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: kservice-a-ingress
+  namespace: polyglot
+  annotations:
+    nginx.ingress.kubernetes.io/app-root: /
+spec:
+  rules:
+    - host: kservice-a.vorozco.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kservice-a
+                port:
+                  number: 8080
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: kservice-a
+  namespace: polyglot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kservice-a
+  template:
+    metadata:
+      labels:
+        app: kservice-a
+        version: v1
+    spec:
+      containers:
+      - name: kservice-a
+        image: tuxtor/kservice-a:1.0.0-link
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+---

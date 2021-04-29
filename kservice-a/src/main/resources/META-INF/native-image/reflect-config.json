@@ -1,0 +1,7 @@
+[
+  {
+    "name": "com.nabenik.servicea.model.AdmPhrase",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  }
+]

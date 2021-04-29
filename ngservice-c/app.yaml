@@ -1,0 +1,60 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ngservice-c
+  namespace: polyglot
+  labels:
+    app: ngservice-c
+spec:
+  type: ClusterIP
+  selector:
+    app: ngservice-c
+  ports:
+    - port: 80
+      targetPort: 80
+      name: http
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: ngservice-c-ingress
+  namespace: polyglot
+  annotations:
+    nginx.ingress.kubernetes.io/app-root: /
+spec:
+  rules:
+    - host: ngservice-c.vorozco.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ngservice-c
+                port:
+                  number: 80
+---
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ngservice-c
+  namespace: polyglot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ngservice-c
+  template:
+    metadata:
+      labels:
+        app: ngservice-c
+        version: v1
+    spec:
+      containers:
+        - name: ngservice-c
+          image: tuxtor/ngservice-c
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+---
