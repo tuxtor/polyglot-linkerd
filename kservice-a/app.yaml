@@ -14,26 +14,6 @@ spec:
     targetPort: 8080
     name: http
 ---
-kind: Ingress
-apiVersion: networking.k8s.io/v1
-metadata:
-  name: kservice-a-ingress
-  namespace: polyglot
-  annotations:
-    nginx.ingress.kubernetes.io/app-root: /
-spec:
-  rules:
-    - host: kservice-a.vorozco.local
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: kservice-a
-                port:
-                  number: 8080
----
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -52,8 +32,8 @@ spec:
     spec:
       containers:
       - name: kservice-a
-        image: tuxtor/kservice-a:1.0.0-link
-        imagePullPolicy: Never
+        image: tuxtor/kservice-a:oci-1.0.0 
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---

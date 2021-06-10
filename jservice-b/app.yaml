@@ -6,7 +6,7 @@ metadata:
   labels:
     app: jservice-b
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: jservice-b
   ports:
@@ -14,27 +14,22 @@ spec:
     targetPort: 8080
     name: http
 ---
-kind: Ingress
-apiVersion: networking.k8s.io/v1
+kind: Service
+apiVersion: v1
 metadata:
-  name: jservice-b-ingress
+  name: jservice-b-public
   namespace: polyglot
-  annotations:
-    nginx.ingress.kubernetes.io/app-root: /
+  labels:
+    app: jservice-b-public
 spec:
-  rules:
-    - host: jservice-b.vorozco.local
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: jservice-b
-                port:
-                  number: 8080
+  type: LoadBalancer
+  selector:
+    app: jservice-b
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
 ---
-
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -53,8 +48,8 @@ spec:
     spec:
       containers:
       - name: jservice-b
-        image: tuxtor/jservice-b:1.0.0-link
-        imagePullPolicy: Never
+        image: tuxtor/jservice-b:oci-1.0.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---

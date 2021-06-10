@@ -10,3 +10,8 @@ spec:
         pathRegex: /.*
       name: GET ALL
       isRetryable: true
+      timeout: 300ms
+  retryBudget:
+    retryRatio: 0.2
+    minRetriesPerSecond: 10
+    ttl: 10s
