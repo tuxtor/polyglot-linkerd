@@ -1,6 +1,22 @@
 kind: Service
 apiVersion: v1
 metadata:
+  name: kservice-a-public
+  namespace: polyglot
+  labels:
+    app: kservice-a
+spec:
+  type: LoadBalancer
+  selector:
+    app: kservice-a
+  ports:
+    - port: 80
+      targetPort: 8080
+      name: externalhttp
+---
+kind: Service
+apiVersion: v1
+metadata:
   name: kservice-a
   namespace: polyglot
   labels:
@@ -32,8 +48,17 @@ spec:
     spec:
       containers:
       - name: kservice-a
-        image: tuxtor/kservice-a:oci-1.0.0 
+        image: tuxtor/kservice-a:oci-1.0.3
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: 500m
+            ephemeral-storage: "1Gi"
+          limits:
+            memory: "128Mi"
+            cpu: 1000m
+            ephemeral-storage: "2Gi"
         ports:
         - containerPort: 8080
 ---

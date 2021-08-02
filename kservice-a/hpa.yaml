@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: kservice-a-hpa
+  namespace: polyglot
+spec:
+  maxReplicas: 3
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: kservice-a
+  targetCPUUtilizationPercentage: 75
+# 3 cpu + 1000m - 3000m
+# promedio >= 1500m
