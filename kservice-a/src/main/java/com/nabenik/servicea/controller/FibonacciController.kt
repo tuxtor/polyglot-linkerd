@@ -7,8 +7,6 @@ import javax.ws.rs.*
 @ApplicationScoped
 class FibonacciController{
 
-
-
     @GET
     fun doHello(@QueryParam("n") @DefaultValue("0") n: Long): String {
         return doFibo(n).toString()

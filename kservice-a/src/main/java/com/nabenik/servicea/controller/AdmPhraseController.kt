@@ -18,7 +18,7 @@ class AdmPhraseController {
 
     @GET
     @Path("/{id:[0-9][0-9]*}")
-   fun findById(@PathParam("id") id: Long): AdmPhrase? {
+    fun findById(@PathParam("id") id: Long): AdmPhrase? {
         maybeFail("Random fail")
         return phraseList.firstOrNull(){ it.phraseId == id }
     }

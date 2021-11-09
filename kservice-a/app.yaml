@@ -48,15 +48,15 @@ spec:
     spec:
       containers:
       - name: kservice-a
-        image: tuxtor/kservice-a:oci-1.0.3
+        image: tuxtor/kservice-a:laouc-1.0.0
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "64Mi"
+            memory: "128Mi"
             cpu: 500m
             ephemeral-storage: "1Gi"
           limits:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: 1000m
             ephemeral-storage: "2Gi"
         ports:

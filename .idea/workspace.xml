@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51def689-15f9-4b9a-93f8-85ea1aab7075" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/jservice-b/src/main/resources/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jservice-b/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jservice-b/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jservice-b/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kservice-a/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kservice-a/app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kservice-a/src/main/java/com/nabenik/servicea/controller/FibonacciController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kservice-a/src/main/java/com/nabenik/servicea/controller/FibonacciController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kservice-a/src/main/java/com/nabenik/servicea/controller/HelloController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kservice-a/src/main/java/com/nabenik/servicea/controller/HelloController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ngservice-c/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ngservice-c/app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ngservice-c/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ngservice-c/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workshop.md" beforeDir="false" afterPath="$PROJECT_DIR$/workshop.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ybj2XmmTHzzzHVvKRxH3yHpkSw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51def689-15f9-4b9a-93f8-85ea1aab7075" name="Default Changelist" comment="" />
+      <created>1632526977354</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632526977354</updated>
+      <workItem from="1632526980113" duration="29000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

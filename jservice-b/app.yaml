@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: jservice-b
-        image: tuxtor/jservice-b:oci-1.0.0
+        image: tuxtor/jservice-b:laouc-1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

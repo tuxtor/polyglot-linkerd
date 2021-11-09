@@ -19,5 +19,5 @@ class HelloController{
         this.javaHome = javaHome
     }
     @GET
-    fun doHello() = "Hola TDC estoy en $javaHome, ejecutandose en la siguiente direccion IP $ip"
+    fun doHello() = "Hola LAOUC estoy en $javaHome, ejecutandose en la siguiente direccion IP $ip"
 }

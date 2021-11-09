@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: ngservice-c
-          image: tuxtor/ngservice-c:oci-1.0.0
+          image: tuxtor/ngservice-c:laouc-1.0.0
           imagePullPolicy: Always
           ports:
             - containerPort: 80

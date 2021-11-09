@@ -33,7 +33,7 @@ public class PhraseDemoController {
     }
 
     public String doPhraseDemoFallback(){
-        return  "This is a fallback execution, all hope is lost";
+        return  "The system is in maintenace mode, please come back later";
     }
 
 }

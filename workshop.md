@@ -2,7 +2,7 @@
 
 * kubectl get -n polyglot deploy -o yaml \
   | linkerd inject - \
-  | kubectl apply -f -a
+  | kubectl apply -f -
 
 # Tráfico en tiempo real
 
@@ -11,3 +11,7 @@
 # Tráfico en un pod en particular
 
 * linkerd -n polyglot viz tap deploy/kservice-a
+
+# Tolerancia a fallas
+
+* kubectl apply -f kservice-a/service-profile.yaml
